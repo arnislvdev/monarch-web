@@ -4,9 +4,11 @@ import { RiDownload2Fill, RiArrowRightUpLine } from "@remixicon/react"
 import { Button } from "@/components/ui/button"
 import { GradientBackground } from "@/components/gradient-background"
 import { IconLogo, TextLogo } from "@/components/brand"
-import { Spinner } from "@/components/ui/spinner"
+import { downloadUrl, useLatestRelease } from "@/hooks/use-latest-release"
 
 export function Hero() {
+  const release = useLatestRelease()
+
   return (
     <section className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6">
       <GradientBackground
@@ -52,17 +54,26 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
       >
-        <Button size="xl">
+        <Button
+          size="xl"
+          loading={release.status === "loading"}
+          disabled={release.status === "error"}
+          render={
+            release.status === "ready" ? (
+              <a href={downloadUrl()} download />
+            ) : undefined
+          }
+        >
           <RiDownload2Fill data-icon="inline-start" />
-          Download for Windows
+          {release.status === "ready"
+            ? `Download for Windows (${release.release.version})`
+            : release.status === "error"
+              ? "Download unavailable"
+              : "Download for Windows"}
         </Button>
         <Button size="xl" variant="outline">
           Learn more
           <RiArrowRightUpLine data-icon="inline-end" />
-        </Button>
-        <Button size="xl" variant="outline" disabled>
-          <Spinner data-icon="inline-start" />
-          fetching
         </Button>
       </motion.div>
     </section>

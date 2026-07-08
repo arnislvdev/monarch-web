@@ -1,0 +1,7 @@
+# Copy to .dev.vars for local `wrangler dev` testing (gitignored).
+# In production this is set with: wrangler secret put GITHUB_TOKEN
+#
+# Fine-grained, READ-ONLY, single-repo (arnislvdev/monarch) GitHub PAT.
+# Scope: Contents: read-only. Nothing else. See main monarch repo's
+# .env.example for the same pattern used by the app's in-app updater.
+GITHUB_TOKEN=

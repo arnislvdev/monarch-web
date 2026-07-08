@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "monarch-releases",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "GITHUB_REPO": "arnislvdev/monarch",
+    "ASSET_PATTERN": "-installer\\.exe$"
+  }
+}
