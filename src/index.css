@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
-@import "geist";
+@import "@fontsource-variable/geist/wght.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -13,7 +13,7 @@
     --animate-caret-blink: 1s ease-out infinite caret-blink;
     --font-heading: 'Inter', sans-serif;
     --font-mono: 'Geist Mono', monospace;
-    --font-sans: 'Inter', sans-serif;
+    --font-sans: "Geist Variable", "Inter Variable", sans-serif;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
     --color-sidebar-primary: var(--sidebar-primary);
@@ -241,4 +241,26 @@
   html {
     @apply font-sans font-mono;
     }
+}
+
+.scrollbar-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.scrollbar-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: var(--radius);
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted-foreground);
 }
