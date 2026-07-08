@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arnislvdev.github.io/monarch-web/sitemap.xml

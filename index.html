@@ -2,9 +2,56 @@
 <html lang="en" class="antialiased font-sans">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vite-app</title>
+
+    <title>Monarch — Anime & Manga Desktop Client for Windows</title>
+    <meta
+      name="description"
+      content="Monarch is a modular anime & manga desktop client for Windows: torrent-native playback, a distraction-free manga reader, AniSkip, and AniList sync in one app."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://arnislvdev.github.io/monarch-web/" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!--
+      ponytail: GitHub Pages serves static files only and can't set response
+      headers, so this meta CSP is the ceiling — no frame-ancestors or
+      X-Frame-Options (meta doesn't support them per spec). Move to a host
+      that supports custom headers (e.g. Cloudflare Pages `_headers`) if
+      clickjacking protection becomes a requirement.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://monarch-releases.arnislvdev.workers.dev; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Monarch" />
+    <meta property="og:url" content="https://arnislvdev.github.io/monarch-web/" />
+    <meta property="og:title" content="Monarch — Anime & Manga Desktop Client for Windows" />
+    <meta
+      property="og:description"
+      content="Torrent-native playback, a distraction-free manga reader, AniSkip, and AniList sync — one client for everything you watch and read."
+    />
+    <meta property="og:image" content="https://arnislvdev.github.io/monarch-web/og-image.jpg" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1126" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Monarch — Anime & Manga Desktop Client for Windows" />
+    <meta
+      name="twitter:description"
+      content="Torrent-native playback, a distraction-free manga reader, AniSkip, and AniList sync — one client for everything you watch and read."
+    />
+    <meta name="twitter:image" content="https://arnislvdev.github.io/monarch-web/og-image.jpg" />
   </head>
   <body class="bg-primary h-screen overflow-hidden p-2 selection:bg-primary selection:text-primary-foreground">
     <div id="root" class="h-full"></div>

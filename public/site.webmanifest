@@ -1,0 +1,17 @@
+{
+  "name": "Monarch — Anime & Manga Desktop Client",
+  "short_name": "Monarch",
+  "description": "A modular anime & manga desktop client for Windows.",
+  "start_url": "/monarch-web/",
+  "scope": "/monarch-web/",
+  "display": "browser",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/monarch-web/icon.png",
+      "sizes": "1000x1000",
+      "type": "image/png"
+    }
+  ]
+}
