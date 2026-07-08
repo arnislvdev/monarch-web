@@ -24,7 +24,7 @@ const TextLogo = React.forwardRef<SVGSVGElement, LogoProps>(
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 997 200"
       role="img"
-      aria-label="MonoChroma"
+      aria-label="Monarch"
       className={cn("text-foreground", sizeMap[size], className)}
       style={{
         fillRule: "evenodd",
@@ -61,7 +61,7 @@ const IconLogo = React.forwardRef<SVGSVGElement, LogoProps>(
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 80 80"
       role="img"
-      aria-label="MonoChroma Icon"
+      aria-label="Monarch Icon"
       className={cn("text-foreground", sizeMap[size], className)}
       style={{ fillRule: "evenodd", clipRule: "evenodd" }}
       {...props}

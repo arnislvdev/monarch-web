@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { RiDownload2Fill, RiArrowRightUpLine } from "@remixicon/react"
+import { RiDownload2Fill } from "@remixicon/react"
 
 import { Button } from "@/components/ui/button"
 import { GradientBackground } from "@/components/gradient-background"
@@ -48,8 +48,17 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
+      <motion.p
+        className="relative z-10 mt-6 max-w-md text-center text-muted-foreground"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.5, ease: "easeOut" }}
+      >
+        A modular anime &amp; manga desktop client for Windows.
+      </motion.p>
+
       <motion.div
-        className="relative z-10 mt-16 flex items-center gap-3"
+        className="relative z-10 mt-10"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
@@ -70,10 +79,6 @@ export function Hero() {
             : release.status === "error"
               ? "Download unavailable"
               : "Download for Windows"}
-        </Button>
-        <Button size="xl" variant="outline">
-          Learn more
-          <RiArrowRightUpLine data-icon="inline-end" />
         </Button>
       </motion.div>
     </section>
