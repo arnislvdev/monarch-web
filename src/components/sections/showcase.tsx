@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "motion/react"
 import { Button } from "@/components/ui/button"
 import discoverImg from "@/assets/screenshots/Discover.png"
 import libraryImg from "@/assets/screenshots/Library.png"
+import scheduleImg from "@/assets/screenshots/Schedule.png"
+import themesImg from "@/assets/screenshots/Themes.png"
 import settingsImg from "@/assets/screenshots/Settings.png"
 import detailsImg from "@/assets/screenshots/Details.png"
 import playerImg from "@/assets/screenshots/PlayerBuffer.png"
@@ -32,6 +34,18 @@ const shots = [
     label: "Details",
     src: detailsImg,
     alt: "Monarch's title details page showing synopsis and metadata for an anime",
+  },
+  {
+    key: "schedule",
+    label: "Schedule",
+    src: scheduleImg,
+    alt: "Monarch's schedule page showing upcoming releases and airing times",
+  },
+  {
+    key: "themes",
+    label: "Themes",
+    src: themesImg,
+    alt: "Monarch's themes page showing available color schemes and customization options",
   },
   {
     key: "player",

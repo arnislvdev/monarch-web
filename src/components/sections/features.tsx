@@ -6,6 +6,9 @@ import {
   RiBookmarkFill,
   RiRefreshFill,
   RiDiscordFill,
+  RiBook2Fill,
+  RiCalendarEventFill,
+  RiPuzzleFill,
 } from "@remixicon/react"
 
 import { Badge } from "@/components/ui/badge"
@@ -46,6 +49,14 @@ const features = [
     detail: "Close a chapter anywhere, reopen exactly where you left off.",
   },
   {
+    key: "novels",
+    icon: RiBook2Fill,
+    label: "Light novels too",
+    category: "Read",
+    detail:
+      "A dedicated text reader with typography controls and text-to-speech narration.",
+  },
+  {
     key: "anilist",
     icon: RiRefreshFill,
     label: "AniList sync",
@@ -58,6 +69,22 @@ const features = [
     label: "Discord Rich Presence",
     category: "Track",
     detail: "Friends see what you're watching or reading, right in your status.",
+  },
+  {
+    key: "schedule",
+    icon: RiCalendarEventFill,
+    label: "Release schedule",
+    category: "Track",
+    detail:
+      "See when the next episode airs — for your library and everything else this season.",
+  },
+  {
+    key: "extensions",
+    icon: RiPuzzleFill,
+    label: "Extensions",
+    category: "Extend",
+    detail:
+      "Add or swap content sources with installable extensions. The client stays the same; the sources are yours.",
   },
 ]
 

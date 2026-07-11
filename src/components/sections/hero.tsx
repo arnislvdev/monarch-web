@@ -80,6 +80,9 @@ export function Hero() {
               ? "Download unavailable"
               : "Download for Windows"}
         </Button>
+        <p className="mt-3 text-center text-xs text-muted-foreground">
+          Free &middot; In beta &middot; Windows 10/11, 64-bit
+        </p>
       </motion.div>
     </section>
   )
