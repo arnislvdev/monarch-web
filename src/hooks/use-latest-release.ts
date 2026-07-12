@@ -31,6 +31,11 @@ export function useLatestRelease(): State {
       .then((res) => (res.ok ? (res.json() as Promise<LatestRelease>) : null))
       .then((release) => {
         if (cancelled) return
+        // Never trust the API shape blindly: a Worker still serving the old
+        // (pre-arch) response has no `installers`, and reading through it
+        // would throw mid-render and blank the whole page. Missing map =
+        // amd64-only, which is what the old shape meant.
+        if (release && !release.installers) release.installers = { amd64: { filename: "", size: 0 } }
         setState(release ? { status: "ready", release } : { status: "error" })
       })
       .catch(() => {
