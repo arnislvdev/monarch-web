@@ -58,7 +58,7 @@ export function Hero() {
       </motion.p>
 
       <motion.div
-        className="relative z-10 mt-10"
+        className="relative z-10 mt-10 flex flex-col items-center"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
@@ -69,7 +69,7 @@ export function Hero() {
           disabled={release.status === "error"}
           render={
             release.status === "ready" ? (
-              <a href={downloadUrl()} download />
+              <a href={downloadUrl("amd64")} download />
             ) : undefined
           }
         >
@@ -80,8 +80,21 @@ export function Hero() {
               ? "Download unavailable"
               : "Download for Windows"}
         </Button>
+        {release.status === "ready" && release.release.installers.arm64 && (
+          <Button
+            size="sm"
+            variant="link"
+            className="mt-2 text-muted-foreground"
+            render={<a href={downloadUrl("arm64")} download />}
+          >
+            Also available for Windows on ARM (arm64)
+          </Button>
+        )}
         <p className="mt-3 text-center text-xs text-muted-foreground">
-          Free &middot; In beta &middot; Windows 10/11, 64-bit
+          Free &middot; In beta &middot; Windows 10/11,{" "}
+          {release.status === "ready" && release.release.installers.arm64
+            ? "x64 & ARM64"
+            : "64-bit"}
         </p>
       </motion.div>
     </section>

@@ -6,7 +6,6 @@
   "workers_dev": true,
   "preview_urls": false,
   "vars": {
-    "GITHUB_REPO": "arnislvdev/monarch",
-    "ASSET_PATTERN": "-installer\\.exe$"
+    "GITHUB_REPO": "arnislvdev/monarch"
   }
 }

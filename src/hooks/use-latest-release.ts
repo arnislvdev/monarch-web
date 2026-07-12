@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
 
+export type Arch = "amd64" | "arm64"
+
 export interface LatestRelease {
   version: string
-  filename: string
-  size: number
   publishedAt: string
+  // Only the arches the latest release actually shipped — older releases
+  // are amd64-only, so arm64 may be absent and the UI hides that button.
+  installers: Partial<Record<Arch, { filename: string; size: number }>>
 }
 
 type State =
@@ -14,8 +17,8 @@ type State =
 
 const API_BASE = import.meta.env.VITE_RELEASES_API
 
-export function downloadUrl(): string {
-  return `${API_BASE}/download`
+export function downloadUrl(arch: Arch): string {
+  return `${API_BASE}/download?arch=${arch}`
 }
 
 export function useLatestRelease(): State {

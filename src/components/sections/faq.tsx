@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "What do I need to run it?",
     answer:
-      "Just a 64-bit Windows 10 or 11 PC. The media player, manga reader, and tracking features are all built right in, so you won't need to install any extra software.",
+      "Just a Windows 10 or 11 PC — both regular (x64) and Windows on ARM devices are supported, each with a native installer. The media player, manga reader, and tracking features are all built right in, so you won't need to install any extra software.",
   },
   {
     question: "Windows warned me about an 'unrecognized app.' Is that normal?",
