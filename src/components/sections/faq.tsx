@@ -11,32 +11,32 @@ const faqs = [
   {
     question: "Is Monarch free?",
     answer:
-      "Yes. Monarch is free to download and use. It's currently in beta, so expect the occasional rough edge — updates ship regularly.",
+      "Yes, completely. It's free to download and use. Just keep in mind that it's currently in beta, so you might run into a few rough edges as updates roll out.",
   },
   {
     question: "What do I need to run it?",
     answer:
-      "A 64-bit Windows 10 or 11 PC. Everything else — player, reader, tracking — is built into the app; there's nothing extra to install.",
+      "Just a 64-bit Windows 10 or 11 PC. The media player, manga reader, and tracking features are all built right in, so you won't need to install any extra software.",
   },
   {
-    question: "Windows warned me about an unrecognized app. Is that normal?",
+    question: "Windows warned me about an 'unrecognized app.' Is that normal?",
     answer:
-      "Yes. The installer isn't code-signed yet, so Windows SmartScreen may show a warning on first run. Click “More info” and then “Run anyway”. Only do this for installers downloaded from this site.",
+      "Yes, this is normal for new software. Because the installer isn't code-signed yet, Windows SmartScreen might flag it. You can safely bypass this by clicking 'More info' and then 'Run anyway'—just make sure you only download the app from this official site.",
   },
   {
     question: "Where does the content come from?",
     answer:
-      "Monarch doesn't host or distribute any media. It's a client: it finds content through public sources and extensions you choose to install, and pulls metadata and artwork from services like AniList. You're responsible for making sure your sources are legal where you live.",
+      "Monarch doesn't host or provide any media itself. It acts as a client that streams content through public sources and the extensions you choose to add. Metadata and cover art are pulled from services like AniList.",
   },
   {
     question: "Do I need an AniList account?",
     answer:
-      "No. You can skip sign-in and use Monarch on its own. Signing in unlocks syncing — your lists show up in the library, and progress writes back to your AniList profile automatically.",
+      "Not at all. You can use Monarch entirely offline or as a standalone app. However, signing in with AniList lets you sync your library and automatically update your progress as you watch or read.",
   },
   {
     question: "How do updates work?",
     answer:
-      "Monarch checks for new releases and lets you update from inside the app, with release notes shown in a “What's New” dialog after each update.",
+      "Monarch checks for updates automatically. When a new version is ready, you can install it directly from inside the app and view the latest changes in the 'What's New' window.",
   },
 ]
 
