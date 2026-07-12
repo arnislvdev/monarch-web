@@ -3,7 +3,7 @@ import { RiDownload2Fill } from "@remixicon/react"
 
 import { Button } from "@/components/ui/button"
 import { GradientBackground } from "@/components/gradient-background"
-import { IconLogo, TextLogo } from "@/components/brand"
+import { TextLogo } from "@/components/brand"
 import { downloadUrl, useLatestRelease } from "@/hooks/use-latest-release"
 
 export function Hero() {
@@ -33,18 +33,18 @@ export function Hero() {
         transition={{ duration: 1 }}
       >
         <motion.div
-          initial={{ scale: 0.85, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6, ease: "backOut" }}
+          className="relative z-10 flex items-center justify-center"
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.65, 0, 0.35, 1] }}
         >
-          <IconLogo size="xl" />
-        </motion.div>
-        <motion.div
-          initial={{ clipPath: "inset(0 100% 0 0)" }}
-          animate={{ clipPath: "inset(0 0% 0 0)" }}
-          transition={{ delay: 0.45, duration: 0.7, ease: [0.65, 0, 0.35, 1] }}
-        >
-          <TextLogo size="xl" />
+          <motion.div
+            initial={{ clipPath: "inset(0 50% 0 50%)" }}
+            animate={{ clipPath: "inset(0 0% 0 0%)" }}
+            transition={{ delay: 0.15, duration: 0.75, ease: [0.65, 0, 0.35, 1] }}
+          >
+            <TextLogo size="xl" />
+          </motion.div>
         </motion.div>
       </motion.div>
 
@@ -54,7 +54,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.5, ease: "easeOut" }}
       >
-        A modular anime &amp; manga desktop client for Windows.
+        An all-in-one client for everything you watch and read.
       </motion.p>
 
       <motion.div

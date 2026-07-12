@@ -278,12 +278,13 @@
 }
 
 .scrollbar-container {
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
 }
 
 .scrollbar-container::-webkit-scrollbar {
-  width: 6px;
+  width: 0;
+  height: 0;
 }
 
 .scrollbar-container::-webkit-scrollbar-track {
@@ -291,8 +292,7 @@
 }
 
 .scrollbar-container::-webkit-scrollbar-thumb {
-  background-color: var(--border);
-  border-radius: var(--radius);
+  background: transparent;
 }
 
 .scrollbar-container::-webkit-scrollbar-thumb:hover {

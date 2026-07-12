@@ -6,12 +6,10 @@ export function Disclaimer() {
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
         <IconLogo size="sm" className="opacity-50" />
         <p className="text-xs leading-relaxed text-muted-foreground">
-          Monarch does not provide, host, or distribute any media content.
-          You are responsible for obtaining media content through legal
-          means. The software is a tool for organizing and consuming
-          content you already own or have legal access to. By using
-          Monarch, you agree to comply with your local laws and
-          regulations.
+          Monarch doesn't provide, host, or distribute any media content.
+          You are responsible for sourcing your media legally.
+          The app is simply a tool to help you organize and enjoy the content you already own or have legal access to.
+          By using Monarch, you agree to follow your local laws and regulations.
         </p>
         <p className="text-xs text-muted-foreground">
           Copyright requests:{" "}

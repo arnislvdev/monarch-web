@@ -1,7 +1,7 @@
 {
-  "name": "Monarch — Anime & Manga Desktop Client",
+  "name": "Monarch",
   "short_name": "Monarch",
-  "description": "A modular anime & manga desktop client for Windows.",
+  "description": "An all-in-one client for everything you watch and read.",
   "start_url": "/monarch-web/",
   "scope": "/monarch-web/",
   "display": "browser",

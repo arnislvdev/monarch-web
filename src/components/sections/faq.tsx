@@ -16,12 +16,12 @@ const faqs = [
   {
     question: "What do I need to run it?",
     answer:
-      "Just a Windows 10 or 11 PC — both regular (x64) and Windows on ARM devices are supported, each with a native installer. The media player, manga reader, and tracking features are all built right in, so you won't need to install any extra software.",
+      "All you need is a PC running Windows 10 or 11. It works natively on both standard (x64) and Windows on ARM devices, with a dedicated installer for each. The media player, manga reader, and tracking features are all built right in, so you don't need to install any extra software.",
   },
   {
     question: "Windows warned me about an 'unrecognized app.' Is that normal?",
     answer:
-      "Yes, this is normal for new software. Because the installer isn't code-signed yet, Windows SmartScreen might flag it. You can safely bypass this by clicking 'More info' and then 'Run anyway'—just make sure you only download the app from this official site.",
+      "This is completely normal for new software. Because the installer isn't code-signed yet, Windows SmartScreen might show a warning. You can safely bypass this by clicking \"More info\" and then \"Run anyway\". Just make sure you are downloading the app from this official site.",
   },
   {
     question: "Where does the content come from?",
