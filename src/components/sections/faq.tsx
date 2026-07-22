@@ -34,6 +34,16 @@ const faqs = [
       "Not at all. You can use Monarch entirely offline or as a standalone app. However, signing in with AniList lets you sync your library and automatically update your progress as you watch or read.",
   },
   {
+    question: "Can I watch anime with friends?",
+    answer:
+      "Yes, with Watch Together. Host a room and share the code, or join one with a code a friend sent you. Playback stays in sync for everyone, with chat and reactions alongside.",
+  },
+  {
+    question: "Can I download episodes to watch offline?",
+    answer:
+      "Yes. Download a single episode or a whole batch straight from the torrent picker, and it saves to your library to watch anytime, connection or not.",
+  },
+  {
     question: "How do updates work?",
     answer:
       "Monarch checks for updates automatically. When a new version is ready, you can install it directly from inside the app and view the latest changes in the 'What's New' window.",

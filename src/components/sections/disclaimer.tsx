@@ -11,15 +11,34 @@ export function Disclaimer() {
           The app is simply a tool to help you organize and enjoy the content you already own or have legal access to.
           By using Monarch, you agree to follow your local laws and regulations.
         </p>
-        <p className="text-xs text-muted-foreground">
-          Copyright requests:{" "}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+          <a
+            href="privacy.html"
+            className="underline underline-offset-2 hover:text-primary"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="terms.html"
+            className="underline underline-offset-2 hover:text-primary"
+          >
+            Terms of Use
+          </a>
+          <a
+            href="https://ko-fi.com/monarchapp"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 hover:text-primary"
+          >
+            Support the project
+          </a>
           <a
             href="mailto:arnislvdev@gmail.com"
-            className="text-foreground underline underline-offset-2 hover:text-primary"
+            className="underline underline-offset-2 hover:text-primary"
           >
             arnislvdev@gmail.com
           </a>
-        </p>
+        </div>
       </div>
     </footer>
   )

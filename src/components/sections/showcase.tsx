@@ -9,6 +9,9 @@ import themesImg from "@/assets/screenshots/Themes.png"
 import settingsImg from "@/assets/screenshots/Settings.png"
 import detailsImg from "@/assets/screenshots/Details.png"
 import playerImg from "@/assets/screenshots/PlayerBuffer.png"
+import downloadsImg from "@/assets/screenshots/Downloads.png"
+import marketplaceImg from "@/assets/screenshots/Marketplace.png"
+import watchTogetherImg from "@/assets/screenshots/WatchTogether.png"
 
 const shots = [
   {
@@ -52,6 +55,24 @@ const shots = [
     label: "Playback",
     src: playerImg,
     alt: "Monarch's player buffering a torrent stream before playback starts",
+  },
+  {
+    key: "downloads",
+    label: "Downloads",
+    src: downloadsImg,
+    alt: "Monarch's Downloads page showing episodes downloading with progress, speed, and ETA, alongside finished downloads",
+  },
+  {
+    key: "marketplace",
+    label: "Marketplace",
+    src: marketplaceImg,
+    alt: "Monarch's Marketplace page showing one-click installable novel sources across several languages",
+  },
+  {
+    key: "watch-together",
+    label: "Watch Together",
+    src: watchTogetherImg,
+    alt: "Monarch's Watch Together panel showing a synced room with a shareable code and member list",
   },
 ]
 

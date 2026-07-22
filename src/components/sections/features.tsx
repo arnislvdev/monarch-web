@@ -9,6 +9,9 @@ import {
   RiBook2Fill,
   RiCalendarEventFill,
   RiPuzzleFill,
+  RiGroup2Fill,
+  RiDownload2Fill,
+  RiClosedCaptioningFill,
 } from "@remixicon/react"
 
 import { Badge } from "@/components/ui/badge"
@@ -33,6 +36,27 @@ const features = [
     label: "AniSkip built in",
     category: "Watch",
     detail: "Automatically skip openings and endings, perfectly timed to every episode.",
+  },
+  {
+    key: "watch-together",
+    icon: RiGroup2Fill,
+    label: "Watch Together",
+    category: "Watch",
+    detail: "Host a room and share the code. Everyone's playback stays locked in sync, with chat and reactions alongside.",
+  },
+  {
+    key: "downloads",
+    icon: RiDownload2Fill,
+    label: "Download for offline",
+    category: "Watch",
+    detail: "Save episodes straight to your library, one at a time or a whole batch at once, and watch without a connection.",
+  },
+  {
+    key: "subtitles",
+    icon: RiClosedCaptioningFill,
+    label: "Subtitles that just work",
+    category: "Watch",
+    detail: "Torrent-bundled and local subtitle files are found and converted automatically, text or bitmap, no setup needed.",
   },
   {
     key: "reader",
@@ -79,9 +103,9 @@ const features = [
   {
     key: "extensions",
     icon: RiPuzzleFill,
-    label: "Extensions",
+    label: "Marketplace",
     category: "Extend",
-    detail: "Bring your own content sources. Add or swap extensions while keeping the exact same interface.",
+    detail: "Install curated anime, manga, and novel sources in one click, or add any extension yourself by pasting its link.",
   },
 ]
 
@@ -129,7 +153,7 @@ export function Features() {
                         {feature.label}
                       </p>
                     </div>
-                    <p className="mt-1 pl-[26px] text-muted-foreground">
+                    <p className="mt-1 pl-6.5 text-muted-foreground">
                       {feature.detail}
                     </p>
                   </TableCell>
