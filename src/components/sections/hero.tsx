@@ -48,14 +48,14 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      <motion.p
-        className="relative z-10 mt-6 max-w-md text-center text-muted-foreground"
+      <motion.h1
+        className="relative z-10 mt-6 max-w-md text-center font-normal text-muted-foreground"
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.5, ease: "easeOut" }}
       >
-        An all-in-one client for everything you watch and read.
-      </motion.p>
+        Monarch: an all-in-one anime, manga, and novel app for Windows.
+      </motion.h1>
 
       <motion.div
         className="relative z-10 mt-10 flex flex-col items-center"

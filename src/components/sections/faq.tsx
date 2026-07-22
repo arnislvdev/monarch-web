@@ -50,9 +50,30 @@ const faqs = [
   },
 ]
 
+// Generated straight from `faqs` so the structured data can't drift out of
+// sync with what's actually on the page. Googlebot renders the page before
+// extracting JSON-LD, so an inline <script> from React works the same as a
+// static one — see https://developers.google.com/search/docs/appearance/structured-data/faqpage
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+}
+
 export function Faq() {
   return (
     <section id="faq" className="relative px-6 py-24 sm:py-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="mx-auto max-w-3xl">
         <motion.p
           className="text-sm font-medium text-primary"
