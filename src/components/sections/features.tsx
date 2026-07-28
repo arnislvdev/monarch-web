@@ -14,14 +14,6 @@ import {
   RiClosedCaptioningFill,
 } from "@remixicon/react"
 
-import { Badge } from "@/components/ui/badge"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@/components/ui/table"
-
 const features = [
   {
     key: "playback",
@@ -109,12 +101,22 @@ const features = [
   },
 ]
 
+// Categories in display order. Each becomes its own labelled block of cards,
+// so the list reads by what you're doing (Watch / Read / Track / Extend)
+// instead of one long undifferentiated table.
+const CATEGORY_ORDER = ["Watch", "Read", "Track", "Extend"] as const
+
+const groups = CATEGORY_ORDER.map((category) => ({
+  category,
+  items: features.filter((f) => f.category === category),
+}))
+
 export function Features() {
   return (
     <section id="features" className="relative px-6 py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-5xl">
         <motion.p
-          className="text-sm font-medium text-primary"
+          className="text-center text-sm font-medium text-primary"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -123,7 +125,7 @@ export function Features() {
           One client
         </motion.p>
         <motion.h2
-          className="mt-3 max-w-2xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl"
+          className="mx-auto mt-3 max-w-2xl text-center text-3xl font-medium tracking-tight text-foreground sm:text-4xl"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -132,39 +134,41 @@ export function Features() {
           Everything you watch and read, tracked without the busywork.
         </motion.h2>
 
-        <motion.div
-          className="mt-12"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <Table variant="card">
-            <TableBody>
-              {features.map((feature) => (
-                <TableRow key={feature.key} className="align-top">
-                  <TableCell className="whitespace-normal">
-                    <div className="flex items-center gap-2.5">
-                      <feature.icon
-                        className="size-4 shrink-0 text-muted-foreground"
-                        aria-hidden="true"
-                      />
-                      <p className="font-medium text-foreground">
-                        {feature.label}
-                      </p>
-                    </div>
-                    <p className="mt-1 pl-6.5 text-muted-foreground">
+        <div className="mt-16 flex flex-col gap-14">
+          {groups.map((group) => (
+            <div key={group.category}>
+              <motion.p
+                className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground"
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.4 }}
+              >
+                {group.category}
+              </motion.p>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {group.items.map((feature, i) => (
+                  <motion.div
+                    key={feature.key}
+                    className="group rounded-2xl bg-muted/40 p-5 transition-colors hover:bg-muted/70"
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.4, delay: i * 0.04 }}
+                  >
+                    <span className="flex size-9 items-center justify-center rounded-xl bg-background/70 text-foreground transition-colors group-hover:bg-background">
+                      <feature.icon className="size-4.5" aria-hidden="true" />
+                    </span>
+                    <p className="mt-4 font-medium text-foreground">{feature.label}</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                       {feature.detail}
                     </p>
-                  </TableCell>
-                  <TableCell className="px-4 text-right">
-                    <Badge>{feature.category}</Badge>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

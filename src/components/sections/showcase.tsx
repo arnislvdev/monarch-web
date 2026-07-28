@@ -7,11 +7,11 @@ import libraryImg from "@/assets/screenshots/Library.png"
 import scheduleImg from "@/assets/screenshots/Schedule.png"
 import themesImg from "@/assets/screenshots/Themes.png"
 import settingsImg from "@/assets/screenshots/Settings.png"
+import searchImg from "@/assets/screenshots/Search.png"
 import detailsImg from "@/assets/screenshots/Details.png"
 import playerImg from "@/assets/screenshots/PlayerBuffer.png"
 import downloadsImg from "@/assets/screenshots/Downloads.png"
 import marketplaceImg from "@/assets/screenshots/Marketplace.png"
-import watchTogetherImg from "@/assets/screenshots/WatchTogether.png"
 
 const shots = [
   {
@@ -44,6 +44,12 @@ const shots = [
     src: scheduleImg,
     alt: "Monarch's schedule page showing upcoming releases and airing times",
   },
+    {
+    key: "search",
+    label: "Search",
+    src: searchImg,
+    alt: "Monarch's search page showing filtered results based on user input",
+  },
   {
     key: "themes",
     label: "Themes",
@@ -67,12 +73,6 @@ const shots = [
     label: "Marketplace",
     src: marketplaceImg,
     alt: "Monarch's Marketplace page showing one-click installable novel sources across several languages",
-  },
-  {
-    key: "watch-together",
-    label: "Watch Together",
-    src: watchTogetherImg,
-    alt: "Monarch's Watch Together panel showing a synced room with a shareable code and member list",
   },
 ]
 
@@ -121,18 +121,22 @@ export function Showcase() {
         </motion.div>
 
         <motion.div
-          className="relative mt-8 overflow-hidden rounded-2xl border border-border/40 shadow-xs/5"
+          className="relative mt-8 overflow-hidden rounded-2xl border border-border/40 bg-muted/30 shadow-xs/5"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
+          {/* The screenshots aren't a clean 16:9 (app screens run ~1.58-1.73),
+              so object-cover in a forced 16:9 box scaled them up and cropped
+              the top off. object-contain in a slightly taller box shows the
+              full screenshot every time, with a soft fill behind any letterboxing. */}
           <AnimatePresence mode="wait">
             <motion.img
               key={activeShot.key}
               src={activeShot.src}
               alt={activeShot.alt}
-              className="aspect-video w-full object-cover"
+              className="aspect-8/5 w-full object-contain"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

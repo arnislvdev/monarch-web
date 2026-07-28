@@ -2,7 +2,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils";
 
 type LogoVariant = "text" | "icon" | "combined"
-type LogoSize = "sm" | "md" | "lg"
+type LogoSize = "sm" | "md" | "lg" | "xl"
 
 interface LogoProps extends React.SVGProps<SVGSVGElement> {
   variant?: LogoVariant
@@ -14,6 +14,7 @@ const sizeMap = {
   sm: "h-4 w-auto",
   md: "h-5 w-auto",
   lg: "h-8 w-auto",
+  xl: "h-20 w-auto",
 } as const satisfies Record<LogoSize, string>
 
 const TextLogo = React.forwardRef<SVGSVGElement, LogoProps>(
